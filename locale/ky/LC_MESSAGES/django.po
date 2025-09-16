@@ -1,0 +1,577 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-15 10:16+0600\n"
+"PO-Revision-Date: 2025-09-14 20:40+0600\n"
+"Last-Translator: Erkin <you@example.com>\n"
+"Language-Team: Kyrgyz <ky@li.org>\n"
+"Language: ky\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: templates/base.html:90
+msgid "Меню"
+msgstr "Меню"
+
+#: templates/base.html:92 templates/base.html:111 templates/faq/faq.html:35
+#: templates/services/detail.html:78 templates/services/detail.html:88
+msgid "Главная"
+msgstr "Башкы бет"
+
+#: templates/base.html:93 templates/base.html:112
+#: templates/services/detail.html:79 templates/services/detail.html:90
+#: templates/services/list.html:4 templates/services/list.html:36
+msgid "Услуги"
+msgstr "Кызматтар"
+
+#: templates/base.html:94 templates/base.html:113
+#: templates/products/list.html:4 templates/products/list.html:7
+msgid "Товары"
+msgstr "Товарлар"
+
+#: templates/base.html:96 templates/base.html:115 templates/contacts.html:4
+#: templates/contacts.html:7
+msgid "Контакты"
+msgstr "Байланыштар"
+
+#: templates/base.html:126
+msgid "Язык"
+msgstr "Тил"
+
+#: templates/base.html:173 templates/reviews/new.html:4
+#: templates/reviews/new.html:7
+#, fuzzy
+#| msgid "Отправить"
+msgid "Оставить отзыв"
+msgstr "Ой пикир калтыруу"
+
+#: templates/contacts.html:11
+msgid "Адрес"
+msgstr "Дарек"
+
+#: templates/contacts.html:12 templates/partials/lead_form.html:20
+msgid "Телефон"
+msgstr "Телефон"
+
+#: templates/contacts.html:23
+msgid "Часы работы"
+msgstr "Иштөө сааттары"
+
+#: templates/contacts.html:33
+msgid "Карта появится после заполнения координат в админке."
+msgstr "Админ панелине координаттарды киргизгенден кийин карта чыгат."
+
+#: templates/errors/404.html:8
+msgid "Страница не найдена"
+msgstr "Барак табылган жок"
+
+#: templates/errors/500.html:8
+msgid "Ведутся технические работы. Попробуйте позже."
+msgstr ""
+"Техникалык иштер жүрүп жатат. Сураныч, кийинчерээк кайра аракет кылыңыз."
+
+#: templates/faq/faq.html:4 templates/faq/faq.html:50
+msgid "FAQ — Диагностика мотора"
+msgstr "FAQ — Мотор диагностикасы"
+
+#: templates/faq/faq.html:37
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/faq/faq.html:42
+msgid "Назад"
+msgstr "Артка"
+
+#: templates/faq/faq.html:53
+msgid ""
+"Собрали ответы на частые вопросы о диагностике двигателя, сроках и "
+"стоимости. Если не нашли нужное — напишите нам в WhatsApp, поможем за пару "
+"минут."
+msgstr ""
+"Биз кыймылдаткычтын диагностикасы, убактысы жана жөнүндө көп берилүүчү "
+"суроолорго жоопторду чогулттук наркы. Керектүү нерсеңизди таппасаңыз, бизге "
+"WhatsApp аркылуу жазыңыз, биз сизге бир нече жолу жардам беребиз мүнөт."
+
+#: templates/faq/faq.html:83
+msgid "Сколько стоит диагностика мотора?"
+msgstr "Мотор диагностикасы канча турат?"
+
+#: templates/faq/faq.html:87
+#, fuzzy
+#| msgid ""
+#| "Базовая диагностика — от 700 сом. Итог зависит от модели двигателя и перечня"
+#| " проверок. Точную стоимость назовём после осмотра."
+msgid ""
+"Базовая диагностика — от 700 сом. Итог зависит от модели двигателя и "
+"перечня проверок. Точную стоимость назовём после осмотра."
+msgstr ""
+"Негизги диагностика — 700 сомдон. Акыркы баа кыймылдаткычтын үлгүсүнө жана "
+"текшерүү тизмесине жараша болот. Так бааны кароодон кийин айтабыз."
+
+#: templates/faq/faq.html:93
+msgid "Сколько времени занимает?"
+msgstr "Канча убакыт талап кылынат?"
+
+#: templates/faq/faq.html:97
+msgid ""
+"Обычно 40–90 минут. При сложных случаях — до 2–3 часов с тест-драйвом и "
+"повторными проверками."
+msgstr ""
+"Адатта 40–90 мүнөт. Татаал учурларда тест-драйв жана кайталап текшерүү менен"
+" 2–3 саатка чейин."
+
+#: templates/faq/faq.html:103
+msgid "Нужно ли записываться заранее?"
+msgstr "Алдын ала жазылуу керекпи?"
+
+#: templates/faq/faq.html:107
+msgid ""
+"Да, так мы точно зарезервируем пост и диагноста. В экстренных случаях найдём"
+" окошко в день обращения."
+msgstr ""
+"Ооба, ошондо постту жана diagnost адисин так резервдейбиз. Шашылыш учурларда"
+" кайрылган күнү эле бош убакыт издеп беребиз."
+
+#: templates/faq/faq.html:117
+msgid "Не нашли ответ?"
+msgstr "Жооп таба албадыңызбы?"
+
+#: templates/faq/faq.html:119
+msgid ""
+"Напишите нам — ответим в течение нескольких минут и сориентируем по "
+"стоимости."
+msgstr ""
+"Бизге жазыңыз — бир нече мүнөт ичинде жооп берип, баа боюнча да багыттайбыз."
+
+#: templates/faq/faq.html:131 templates/faq/faq.html:152
+#: templates/products/detail.html:57
+msgid "Позвонить"
+msgstr "Чалуу"
+
+#: templates/faq/faq.html:137
+msgid "Подсказка"
+msgstr "Билдирүү"
+
+#: templates/faq/faq.html:139
+msgid ""
+"Диагностика — приоритет: она экономит бюджет ремонта. Мы фиксируем "
+"результаты и объясняем простыми словами."
+msgstr ""
+"Диагностика — артыкчылык: ал оңдоонун чыгымын кыскартат. Натыйжаларды "
+"каттайбыз жана жөнөкөй тилде түшүндүрөбүз."
+
+#: templates/home.html:5 templates/home.html:16
+#, python-format
+msgid "Диагностика мотора в Бишкеке — %(brand)s"
+msgstr "Бишкектеги мотор диагностикасы — %(brand)s"
+
+#: templates/home.html:10
+msgid ""
+"Профессиональная диагностика мотора в Бишкеке: быстрая точная проверка "
+"двигателя на современном оборудовании. Понятные результаты и план ремонта "
+"уже после первого визита."
+msgstr ""
+"Бишкекте моторду профессионалдуу диагностикалоо: заманбап жабдууда ыкчам "
+"жана так текшерүү. Жыйынтыктар жана оңдоо планы алгачкы баруудан кийин эле."
+
+#: templates/home.html:21
+msgid ""
+"Диагностика двигателя, проверка ошибок, компрессия, эндоскопия. Быстро и "
+"прозрачно."
+msgstr ""
+"Кыймылдаткыч диагностикасы, ката текшерүү, компрессия, эндоскопия. Ыкчам "
+"жана түшүнүктүү."
+
+#: templates/home.html:38
+msgid "Диагностика мотора в Бишкеке"
+msgstr "Бишкектеги мотор диагностикасы"
+
+#: templates/home.html:42
+msgid ""
+"Профессиональная проверка двигателя: компьютерная диагностика, замер "
+"компрессии, эндоскопия цилиндров. Чёткие выводы и план работ уже после "
+"первого визита."
+msgstr ""
+"Кыймылдаткычты профессионалдуу текшерүү: компьютердик диагностика, "
+"компрессияны өлчөө, цилиндрлерди эндоскопиялоо. Так жыйынтыктар жана иштердин "
+"планы биринчи баруудан кийин эле."
+
+#: templates/home.html:53
+msgid "Записаться в WhatsApp"
+msgstr "WhatsApp аркылуу жазылуу"
+
+#: templates/home.html:59
+msgid "Telegram"
+msgstr "Telegram"
+
+#: templates/home.html:64
+#, fuzzy, python-format
+#| msgid "Позвонить"
+msgid "Позвонить %(phone)s"
+msgstr "Чалуу"
+
+#: templates/home.html:69
+msgid "Или оставьте заявку — перезвоним в течение 10 минут."
+msgstr "Же болбосо заявканы толтур - 10 мүнөттүн аралыгында чалабыз."
+
+#: templates/home.html:76
+msgid "5+ лет в Бишкеке"
+msgstr "5+ жыл Бишкекте"
+
+#: templates/home.html:77
+msgid "500+ обслуженных авто"
+msgstr "500+ машиналарды тейлөө"
+
+#: templates/home.html:78
+#, fuzzy
+#| msgid "Часы работы"
+msgid "Гарантия на работы"
+msgstr "Иштөө сааттары"
+
+#: templates/home.html:88
+#, python-format
+msgid ""
+"\n"
+"            %(rating)s / 5 · %(count)s отзывов\n"
+"          "
+msgstr ""
+"\n"
+"            %(rating)s / 5 · %(count)s отзывов\n"
+"          "
+
+#: templates/home.html:98
+#, fuzzy
+#| msgid "Сколько стоит диагностика мотора?"
+msgid "Смотреть: Диагностика мотора"
+msgstr "Мотор диагностикасы канча турат?"
+
+#: templates/home.html:106
+msgid ""
+"Добавьте ID видео в SITESET.hero_youtube_id, чтобы показать ролик о "
+"диагностике"
+msgstr ""
+"Видеонун IDсин кошуңуз SITESET.hero_youtube_id, диагностика "
+"тууралуу роликти көрсөтүү үчүн"
+
+#: templates/home.html:115
+msgid "Отзывы клиентов"
+msgstr "Кардарлардын ой-пикирлери"
+
+#: templates/home.html:135
+#, fuzzy
+#| msgid "FAQ — Диагностика мотора"
+msgid "Диагностика мотора"
+msgstr "FAQ — Мотор диагностикасы"
+
+#: templates/home.html:136
+msgid "Бишкек, Кыргызстан"
+msgstr "Бишкек, Кыргызстан"
+
+#: templates/partials/lead_form.html:14
+msgid "Имя"
+msgstr "Аты"
+
+#: templates/partials/lead_form.html:26
+msgid "Комментарий"
+msgstr "Комментарий"
+
+#: templates/partials/lead_form.html:32 templates/reviews/new.html:32
+msgid "Отправить"
+msgstr "Жөнөтүү"
+
+#: templates/products/detail.html:34
+msgid "В наличии"
+msgstr "Колдо бар"
+
+#: templates/products/detail.html:36
+msgid "Под заказ"
+msgstr "Заказ аркылуу"
+
+#: templates/products/detail.html:40 templates/products/list.html:40
+#: templates/services/detail.html:145 templates/services/list.html:51
+msgid "сом"
+msgstr "сом"
+
+#: templates/products/detail.html:52
+#, fuzzy
+#| msgid "Записаться в WhatsApp"
+msgid "Купить / спросить в WhatsApp"
+msgstr "WhatsApp аркылуу жазылуу"
+
+#: templates/products/list.html:11
+msgid "Все категории"
+msgstr "Баардык категорялар"
+
+#: templates/products/list.html:17
+msgid "Все бренды"
+msgstr "Баардык бренддер"
+
+#: templates/products/list.html:22
+msgid "Фильтр"
+msgstr "Фильтр"
+
+#: templates/products/list.html:23
+msgid "Сбросить"
+msgstr "Калыбына келтирүү"
+
+#: templates/products/list.html:41
+msgid "Уточнить цену"
+msgstr "Бааны тастыктаңыз"
+
+#: templates/products/list.html:46
+msgid "Пока нет товаров"
+msgstr "Азырынча өнүм жок"
+
+#: templates/services/detail.html:106
+msgid "Кейсы до и после"
+msgstr "Мурунку жана кийинки учурлар"
+
+#: templates/services/detail.html:144
+msgid "Цена от"
+msgstr "Баасы"
+
+#: templates/services/detail.html:154
+msgid "Есть вопросы? Звоните"
+msgstr "Суроо болсо чалыңыз"
+
+#: templates/services/detail.html:164
+msgid "Вопросы и ответы"
+msgstr "Суроолор жана жооптор"
+
+#: templates/services/list.html:51
+msgid "от"
+msgstr "тартып"
+
+#: templates/services/list.html:55
+msgid "Список услуг скоро появится."
+msgstr "Кызматтардын тизмеси жакында пайда болот."
+
+msgid "Проверьте форму"
+msgstr "Форманы текшериңиз"
+
+msgid "Ручной ввод"
+msgstr "Кол менен киргизүү"
+
+msgid "Оценка"
+msgstr "Балоо"
+
+msgid "Отзыв"
+msgstr "Сын-пикир"
+
+msgid "Источник"
+msgstr "Булак"
+
+msgid "Ссылка на источник"
+msgstr "Булак шилтемеси"
+
+msgid "Показывать"
+msgstr "Показывать"
+
+msgid "Отзывы"
+msgstr "Сын-пикирлер"
+
+msgid "Новая"
+msgstr "Жаңы"
+
+msgid "В работе"
+msgstr "Жумушта"
+
+msgid "Завершена"
+msgstr "Аякталды"
+
+msgid "Услуга"
+msgstr "Кызмат"
+
+msgid "Статус"
+msgstr "Статус"
+
+msgid "Согласие с политикой"
+msgstr "Саясат менен макул"
+
+msgid "Заявка"
+msgstr "Өтүнмө"
+
+msgid "Заявки"
+msgstr "Өтүнмөлөр"
+
+msgid "Бренд"
+msgstr "Бренд"
+
+msgid "Короткое описание"
+msgstr "Кыскача сүрөттөмө"
+
+msgid "Телефон (для показа)"
+msgstr "Телефон (көрсөтүү үчүн)"
+
+msgid "Телефон в E.164"
+msgstr "E.164 телефону"
+
+msgid "Ссылка WhatsApp"
+msgstr "WhatsApp шилтеме"
+
+msgid "Ссылка Telegram"
+msgstr "Telegram шилтеме"
+
+msgid "Ссылка "
+msgstr "Шилтеме"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Город"
+msgstr "Шаар"
+
+msgid "Регион"
+msgstr "Аймак"
+
+msgid "Индекс"
+msgstr "Индекс"
+
+msgid "Страна (ISO2 или название)"
+msgstr "Өлкө (ISO2 же аты)"
+
+msgid "Широта"
+msgstr "Кеңдик"
+
+msgid "Долгота"
+msgstr "Узундук"
+
+msgid "Пн"
+msgstr "Дүйш"
+
+msgid "Вт"
+msgstr "Шейшемби"
+
+msgid "Ср"
+msgstr "Шаршемби"
+
+msgid "Чт"
+msgstr "Бейшемби"
+
+msgid "Пт"
+msgstr "Жума"
+
+msgid "Сб"
+msgstr "Ишемби"
+
+msgid "Вс"
+msgstr "Жекшемби"
+
+msgid "Настройки сайта"
+msgstr "Сайттын жөндөөлөрү"
+
+msgid "Логотип"
+msgstr "Логотип"
+
+msgid "Бренды"
+msgstr "Бренддер"
+
+msgid "Категория"
+msgstr "Категориясы"
+
+msgid "Категория товара"
+msgstr "Товардын категориясы"
+
+msgid "Категории товаров"
+msgstr "Товарлардын категориясы"
+
+msgid "Название"
+msgstr "Аталышы"
+
+msgid "Обложка"
+msgstr "Мукаба"
+
+msgid "Краткое описание"
+msgstr "Кыскача сүрөттөмө"
+
+msgid "Полное описание"
+msgstr "Толук сүрөттөмө"
+
+msgid "Цена, сом"
+msgstr "Баасы, сом"
+
+msgid "Единица"
+msgstr "Бирдиги"
+
+msgid "Напр.: 1 л, 4 л, канистра 20 л"
+msgstr "Мисалы.: 1 л, 4 л, канистра 20 л"
+
+msgid "Показывать на сайте"
+msgstr "Сайтта көрсөтүү"
+
+msgid "Товар"
+msgstr "Товар"
+
+msgid "Фото"
+msgstr "Сүрөт"
+
+msgid "ALT"
+msgstr "ALT"
+
+msgid "Фото товара"
+msgstr "Товардын сүрөтү"
+
+msgid "Фотографии товара"
+msgstr "Товардын сүрөттөрү"
+
+msgid "Двигатель и Детейлинг — эксперты в Бишкеке"
+msgstr "Мотор жана Детейлинг — Бишкектеги эксперттер"
+
+msgid "Чистота. Мощность. Доверие."
+msgstr "Тазалык. Күч. Ишеним."
+
+#: templates/reviews/create.html:7
+msgid "Оставить отзыв"
+msgstr "Ой-пикир калтыруу"
+
+#: templates/reviews/create.html:10
+msgid "Оставьте отзыв о качестве диагностики и обслуживания в нашем автосервисе в Бишкеке. Ваше мнение важно для нас!"
+msgstr "Биздин Бишкектеги автосервистеги диагностика жана тейлөө сапаты жөнүндө ой-пикириңизди калтырыңыз. Сиздин пикириңиз биз үчүн маанилүү!"
+
+#: templates/reviews/create.html:21
+msgid "Поделитесь вашим опытом обслуживания. Ваше мнение поможет нам стать лучше!"
+msgstr "Тейлөө тажрыйбаңыз менен бөлүшүңүз. Сиздин пикириңиз бизге жакшыраак болууга жардам берет!"
+
+#: templates/reviews/create.html:31
+msgid "Ваше имя"
+msgstr "Атыңыз"
+
+#: templates/reviews/create.html:38
+msgid "Как к вам обращаться?"
+msgstr "Сизге кандай чакыруу керек?"
+
+#: templates/reviews/create.html:51
+msgid "Оценка"
+msgstr "Баалоо"
+
+#: templates/reviews/create.html:70
+msgid "Ваш отзыв"
+msgstr "Сиздин ой-пикириңиз"
+
+#: templates/reviews/create.html:74
+msgid "Расскажите о вашем опыте обслуживания..."
+msgstr "Тейлөө тажрыйбаңыз жөнүндө айтып бериңиз..."
+
+#: templates/reviews/create.html:87
+msgid "Я согласен на публикацию моего отзыва на сайте"
+msgstr "Мен сайтта ой-пикиримдин жарыяланышына макулмун"
+
+#: templates/reviews/create.html:100
+msgid "Отправить отзыв"
+msgstr "Ой-пикирди жөнөтүү"
+
+#: templates/reviews/create.html:107
+msgid "Есть вопросы?"
+msgstr "Суроолоруңуз барбы?"
+
+#: templates/reviews/create.html:108
+msgid "Свяжитесь с нами удобным способом"
+msgstr "Биз менен ыңгайлуу жол менен байланышыңыз"

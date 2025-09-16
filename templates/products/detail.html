@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load i18n thumbnail %}
+
+{% block title %}{{ p.title }}{% endblock %}
+
+{% block content %}
+<div class="grid md:grid-cols-2 gap-8">
+  <div>
+    {% if p.cover %}
+      {% thumbnail p.cover "1000x750" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ p.title }}" class="w-full rounded-xl border border-neutral-800 object-cover">
+      {% endthumbnail %}
+    {% endif %}
+
+    {% if p.images.all %}
+      <div class="mt-3 grid grid-cols-4 gap-2">
+        {% for g in p.images.all %}
+          {% thumbnail g.image "400x300" crop="center" as gi %}
+            <img src="{{ gi.url }}" class="w-full h-24 object-cover rounded border border-neutral-800" alt="{{ g.alt|default:p.title }}">
+          {% endthumbnail %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  <div>
+    <div class="text-neutral-400 text-sm">
+      {% if p.brand %}{{ p.brand.title }}{% endif %}{% if p.category %} • {{ p.category.title }}{% endif %}
+    </div>
+    <h1 class="text-2xl md:text-3xl font-semibold mt-1">{{ p.title }}</h1>
+
+    {% if p.unit %}<div class="mt-2 text-neutral-300">{{ p.unit }}</div>{% endif %}
+    {% if p.in_stock %}
+      <div class="mt-2 text-green-400 text-sm">{% trans "В наличии" %}</div>
+    {% else %}
+      <div class="mt-2 text-yellow-400 text-sm">{% trans "Под заказ" %}</div>
+    {% endif %}
+
+    {% if p.price %}
+      <div class="mt-4 text-2xl font-semibold">{{ p.price }} {% trans "сом" %}</div>
+    {% endif %}
+
+    <div class="mt-6 prose prose-invert max-w-none">
+      {% if p.full_desc %}{{ p.full_desc|linebreaks }}{% else %}{{ p.short_desc|linebreaks }}{% endif %}
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      {% if whatsapp_link %}
+        {# префилл сообщения #}
+        {% with msg="Здравствуйте! Хочу купить: "|add:p.title|urlencode %}
+          <a href="{{ whatsapp_link }}?text={{ msg }}" class="px-4 py-3 rounded bg-white text-black font-medium" target="_blank" rel="noopener">
+            {% trans "Купить / спросить в WhatsApp" %}
+          </a>
+        {% endwith %}
+      {% endif %}
+      <a href="tel:{{ SITESET.phone_e164 }}" class="px-4 py-3 rounded border border-neutral-700">
+        {% trans "Позвонить" %} {{ SITESET.phone_e164|pretty_phone }}
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

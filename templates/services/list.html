@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load i18n l10n thumbnail %}
+
+{% block title %}{% trans "Услуги" %}{% endblock %}
+
+{# JSON-LD — вместе с базовым LocalBusiness #}
+{% block seo_jsonld %}
+  {{ block.super }}
+  {% if services %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Услуги {{ SITESET.brand|escapejs }}",
+    "itemListElement": [
+      {% for s in services %}
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "{{ s.title|escapejs }}",
+          "description": "{{ s.short_desc|default_if_none:''|striptags|escapejs }}",
+          "url": "{{ request.scheme }}://{{ request.get_host }}{{ s.get_absolute_url }}"{% if s.cover %},
+          "image": "{{ request.scheme }}://{{ request.get_host }}{{ s.cover.url }}"{% endif %}{% if s.price_from %},
+          "offers": { "@type": "Offer", "price": {{ s.price_from|unlocalize }}, "priceCurrency": "KGS" }{% endif %}
+        }
+      }{% if not forloop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-semibold mb-6">{% trans "Услуги" %}</h1>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {% for s in services %}
+  <a href="{{ s.get_absolute_url }}" class="block border border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-600">
+    {% if s.cover %}
+      {% thumbnail s.cover "800x450" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}"
+             alt="{{ s.title }}" class="w-full aspect-video object-cover" loading="lazy" decoding="async">
+      {% endthumbnail %}
+    {% else %}
+      <div class="w-full aspect-video bg-neutral-900"></div>
+    {% endif %}
+    <div class="p-4">
+      <div class="text-lg font-medium">{{ s.title }}</div>
+      {% if s.short_desc %}<p class="mt-2 text-neutral-300 line-clamp-3">{{ s.short_desc }}</p>{% endif %}
+      {% if s.price_from %}<div class="mt-2 text-neutral-400 text-sm">{% trans "от" %} {{ s.price_from }} {% trans "сом" %}</div>{% endif %}
+    </div>
+  </a>
+  {% empty %}
+  <p class="text-neutral-400">{% trans "Список услуг скоро появится." %}</p>
+  {% endfor %}
+</div>
+{% endblock %}

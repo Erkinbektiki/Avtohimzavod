@@ -1,0 +1,318 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-15 10:16+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: templates/base.html:90
+msgid "Меню"
+msgstr ""
+
+#: templates/base.html:92 templates/base.html:111 templates/faq/faq.html:35
+#: templates/services/detail.html:78 templates/services/detail.html:88
+msgid "Главная"
+msgstr ""
+
+#: templates/base.html:93 templates/base.html:112
+#: templates/services/detail.html:79 templates/services/detail.html:90
+#: templates/services/list.html:4 templates/services/list.html:36
+msgid "Услуги"
+msgstr ""
+
+#: templates/base.html:94 templates/base.html:113
+#: templates/products/list.html:4 templates/products/list.html:7
+msgid "Товары"
+msgstr ""
+
+#: templates/base.html:96 templates/base.html:115 templates/contacts.html:4
+#: templates/contacts.html:7
+msgid "Контакты"
+msgstr ""
+
+#: templates/base.html:126
+msgid "Язык"
+msgstr ""
+
+#: templates/base.html:173 templates/reviews/new.html:4
+#: templates/reviews/new.html:7
+msgid "Оставить отзыв"
+msgstr ""
+
+#: templates/contacts.html:11
+msgid "Адрес"
+msgstr ""
+
+#: templates/contacts.html:12 templates/partials/lead_form.html:20
+msgid "Телефон"
+msgstr ""
+
+#: templates/contacts.html:23
+msgid "Часы работы"
+msgstr ""
+
+#: templates/contacts.html:33
+msgid "Карта появится после заполнения координат в админке."
+msgstr ""
+
+#: templates/errors/404.html:8
+msgid "Страница не найдена"
+msgstr ""
+
+#: templates/errors/500.html:8
+msgid "Ведутся технические работы. Попробуйте позже."
+msgstr ""
+
+#: templates/faq/faq.html:4 templates/faq/faq.html:50
+msgid "FAQ — Диагностика мотора"
+msgstr ""
+
+#: templates/faq/faq.html:37
+msgid "FAQ"
+msgstr ""
+
+#: templates/faq/faq.html:42
+msgid "Назад"
+msgstr ""
+
+#: templates/faq/faq.html:53
+msgid ""
+"Собрали ответы на частые вопросы о диагностике двигателя, сроках и "
+"стоимости. Если не нашли нужное — напишите нам в WhatsApp, поможем за пару "
+"минут."
+msgstr ""
+
+#: templates/faq/faq.html:83
+msgid "Сколько стоит диагностика мотора?"
+msgstr ""
+
+#: templates/faq/faq.html:87
+msgid ""
+"Базовая диагностика — от 1500 сом. Итог зависит от модели двигателя и "
+"перечня проверок. Точную стоимость назовём после осмотра."
+msgstr ""
+
+#: templates/faq/faq.html:93
+msgid "Сколько времени занимает?"
+msgstr ""
+
+#: templates/faq/faq.html:97
+msgid ""
+"Обычно 40–90 минут. При сложных случаях — до 2–3 часов с тест-драйвом и "
+"повторными проверками."
+msgstr ""
+
+#: templates/faq/faq.html:103
+msgid "Нужно ли записываться заранее?"
+msgstr ""
+
+#: templates/faq/faq.html:107
+msgid ""
+"Да, так мы точно зарезервируем пост и диагноста. В экстренных случаях найдём "
+"окошко в день обращения."
+msgstr ""
+
+#: templates/faq/faq.html:117
+msgid "Не нашли ответ?"
+msgstr ""
+
+#: templates/faq/faq.html:119
+msgid ""
+"Напишите нам — ответим в течение нескольких минут и сориентируем по "
+"стоимости."
+msgstr ""
+
+#: templates/faq/faq.html:131 templates/faq/faq.html:152
+#: templates/products/detail.html:57
+msgid "Позвонить"
+msgstr ""
+
+#: templates/faq/faq.html:137
+msgid "Подсказка"
+msgstr ""
+
+#: templates/faq/faq.html:139
+msgid ""
+"Диагностика — приоритет: она экономит бюджет ремонта. Мы фиксируем "
+"результаты и объясняем простыми словами."
+msgstr ""
+
+#: templates/home.html:5 templates/home.html:16
+#, python-format
+msgid "Диагностика мотора в Бишкеке — %(brand)s"
+msgstr ""
+
+#: templates/home.html:10
+msgid ""
+"Профессиональная диагностика мотора в Бишкеке: быстрая точная проверка "
+"двигателя на современном оборудовании. Понятные результаты и план ремонта "
+"уже после первого визита."
+msgstr ""
+
+#: templates/home.html:21
+msgid ""
+"Диагностика двигателя, проверка ошибок, компрессия, эндоскопия. Быстро и "
+"прозрачно."
+msgstr ""
+
+#: templates/home.html:38
+msgid "Диагностика мотора в Бишкеке"
+msgstr ""
+
+#: templates/home.html:42
+msgid ""
+"Профессиональная проверка двигателя: компьютерная диагностика, замер "
+"компрессии, эндоскопия цилиндров. Чёткие выводы и план работ уже после "
+"первого визита."
+msgstr ""
+
+#: templates/home.html:53
+msgid "Записаться в WhatsApp"
+msgstr ""
+
+#: templates/home.html:59
+msgid "Telegram"
+msgstr ""
+
+#: templates/home.html:64
+#, python-format
+msgid "Позвонить %(phone)s"
+msgstr ""
+
+#: templates/home.html:69
+msgid "Или оставьте заявку — перезвоним в течение 10 минут."
+msgstr ""
+
+#: templates/home.html:76
+msgid "5+ лет в Бишкеке"
+msgstr ""
+
+#: templates/home.html:77
+msgid "500+ обслуженных авто"
+msgstr ""
+
+#: templates/home.html:78
+msgid "Гарантия на работы"
+msgstr ""
+
+#: templates/home.html:88
+#, python-format
+msgid ""
+"\n"
+"            %(rating)s / 5 · %(count)s отзывов\n"
+"          "
+msgstr ""
+
+#: templates/home.html:98
+msgid "Смотреть: Диагностика мотора"
+msgstr ""
+
+#: templates/home.html:106
+msgid ""
+"Добавьте ID видео в SITESET.hero_youtube_id, чтобы показать ролик о "
+"диагностике"
+msgstr ""
+
+#: templates/home.html:115
+msgid "Отзывы клиентов"
+msgstr ""
+
+#: templates/home.html:135
+msgid "Диагностика мотора"
+msgstr ""
+
+#: templates/home.html:136
+msgid "Бишкек, Кыргызстан"
+msgstr ""
+
+#: templates/partials/lead_form.html:14
+msgid "Имя"
+msgstr ""
+
+#: templates/partials/lead_form.html:26
+msgid "Комментарий"
+msgstr ""
+
+#: templates/partials/lead_form.html:32 templates/reviews/new.html:32
+msgid "Отправить"
+msgstr ""
+
+#: templates/products/detail.html:34
+msgid "В наличии"
+msgstr ""
+
+#: templates/products/detail.html:36
+msgid "Под заказ"
+msgstr ""
+
+#: templates/products/detail.html:40 templates/products/list.html:40
+#: templates/services/detail.html:145 templates/services/list.html:51
+msgid "сом"
+msgstr ""
+
+#: templates/products/detail.html:52
+msgid "Купить / спросить в WhatsApp"
+msgstr ""
+
+#: templates/products/list.html:11
+msgid "Все категории"
+msgstr ""
+
+#: templates/products/list.html:17
+msgid "Все бренды"
+msgstr ""
+
+#: templates/products/list.html:22
+msgid "Фильтр"
+msgstr ""
+
+#: templates/products/list.html:23
+msgid "Сбросить"
+msgstr ""
+
+#: templates/products/list.html:41
+msgid "Уточнить цену"
+msgstr ""
+
+#: templates/products/list.html:46
+msgid "Пока нет товаров"
+msgstr ""
+
+#: templates/services/detail.html:106
+msgid "Кейсы до и после"
+msgstr ""
+
+#: templates/services/detail.html:144
+msgid "Цена от"
+msgstr ""
+
+#: templates/services/detail.html:154
+msgid "Есть вопросы? Звоните"
+msgstr ""
+
+#: templates/services/detail.html:164
+msgid "Вопросы и ответы"
+msgstr ""
+
+#: templates/services/list.html:51
+msgid "от"
+msgstr ""
+
+#: templates/services/list.html:55
+msgid "Список услуг скоро появится."
+msgstr ""

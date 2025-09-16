@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block title %}{% trans "Оставить отзыв" %} — {{ SITESET.brand }}{% endblock %}
+
+{% block head_extra %}
+<meta name="description" content="{% trans 'Оставьте отзыв о качестве диагностики и обслуживания в нашем автосервисе в Бишкеке. Ваше мнение важно для нас!' %}">
+<meta property="og:title" content="{% trans 'Оставить отзыв' %} — {{ SITESET.brand }}">
+<meta property="og:description" content="{% trans 'Поделитесь вашим опытом обслуживания в нашем автосервисе в Бишкеке' %}">
+{% endblock %}
+
+{% block content %}
+<section class="py-16 max-w-2xl mx-auto">
+  <div class="text-center mb-10">
+    <h1 class="text-3xl md:text-4xl font-semibold">{% trans "Оставить отзыв" %}</h1>
+    <p class="mt-4 text-neutral-300">
+      {% trans "Поделитесь вашим опытом обслуживания. Ваше мнение поможет нам стать лучше!" %}
+    </p>
+  </div>
+
+  <div class="bg-neutral-900 rounded-xl border border-neutral-800 p-6 md:p-8">
+    <form method="post" class="space-y-6">
+      {% csrf_token %}
+      
+      {# Скрытые поля #}
+      <input type="hidden" name="next" value="{{ request.META.HTTP_REFERER|default:'' }}">
+
+      {# Имя #}
+      <div>
+        <label for="{{ form.name.id_for_label }}" class="block mb-2 text-sm font-medium text-neutral-300">
+          {% trans "Ваше имя" %} *
+        </label>
+        <input type="text" name="{{ form.name.html_name }}" id="{{ form.name.id_for_label }}"
+               value="{{ form.name.value|default_if_none:'' }}"
+               class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-500 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+               placeholder="{% trans 'Как к вам обращаться?' %}" required>
+        {% if form.name.errors %}
+          <p class="mt-1 text-sm text-red-400">{% for e in form.name.errors %}{{ e }}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Телефон #}
+      <div>
+        <label for="{{ form.phone.id_for_label }}" class="block mb-2 text-sm font-medium text-neutral-300">
+          {% trans "Телефон" %} *
+        </label>
+        <input type="tel" name="{{ form.phone.html_name }}" id="{{ form.phone.id_for_label }}"
+               value="{{ form.phone.value|default_if_none:'' }}"
+               class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-500 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+               placeholder="+996 XXX XXX XXX" required>
+        {% if form.phone.errors %}
+          <p class="mt-1 text-sm text-red-400">{% for e in form.phone.errors %}{{ e }}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Рейтинг #}
+      <div>
+        <label class="block mb-2 text-sm font-medium text-neutral-300">
+          {% trans "Оценка" %} *
+        </label>
+        <div class="flex space-x-1">
+          {% for i in "54321" %}
+            <input class="sr-only peer" type="radio" name="{{ form.rating.html_name }}" id="rate-{{ i }}" value="{{ i }}"
+                   {% if form.rating.value == i %}checked{% endif %} required>
+            <label for="rate-{{ i }}" class="cursor-pointer text-2xl text-neutral-600 peer-checked:text-amber-400 hover:text-amber-300 transition-colors">
+              ★
+            </label>
+          {% endfor %}
+        </div>
+        {% if form.rating.errors %}
+          <p class="mt-1 text-sm text-red-400">{% for e in form.rating.errors %}{{ e }}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Текст отзыва #}
+      <div>
+        <label for="{{ form.text.id_for_label }}" class="block mb-2 text-sm font-medium text-neutral-300">
+          {% trans "Ваш отзыв" %} *
+        </label>
+        <textarea name="{{ form.text.html_name }}" id="{{ form.text.id_for_label }}" rows="5"
+                  class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-white placeholder-neutral-500 focus:border-amber-500 focus:ring-1 focus:ring-amber-500"
+                  placeholder="{% trans 'Расскажите о вашем опыте обслуживания...' %}" required>{{ form.text.value|default_if_none:'' }}</textarea>
+        {% if form.text.errors %}
+          <p class="mt-1 text-sm text-red-400">{% for e in form.text.errors %}{{ e }}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Согласие на публикацию #}
+      <div class="flex items-start">
+        <input type="checkbox" name="{{ form.allow_publish.html_name }}" id="{{ form.allow_publish.id_for_label }}"
+               class="mt-1 mr-3 bg-neutral-800 border-neutral-700 rounded focus:ring-amber-500 focus:border-amber-500"
+               {% if form.allow_publish.value %}checked{% endif %}>
+        <label for="{{ form.allow_publish.id_for_label }}" class="text-sm text-neutral-300">
+          {% trans "Я согласен на публикацию моего отзыва на сайте" %}
+        </label>
+      </div>
+      {% if form.allow_publish.errors %}
+        <p class="mt-1 text-sm text-red-400">{% for e in form.allow_publish.errors %}{{ e }}{% endfor %}</p>
+      {% endif %}
+
+      {# Кнопка отправки #}
+      <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-semibold py-3 px-6 rounded-lg transition-colors">
+        {% trans "Отправить отзыв" %}
+      </button>
+    </form>
+  </div>
+
+  {# Контакты #}
+  <div class="mt-12 text-center">
+    <h2 class="text-xl font-semibold mb-4">{% trans "Есть вопросы?" %}</h2>
+    <p class="text-neutral-300 mb-6">{% trans "Свяжитесь с нами удобным способом" %}</p>
+    
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="https://wa.me/{{ SITESET.phone_e164|cut:'+' }}" 
+         class="px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors">
+        {% trans "WhatsApp" %}
+      </a>
+      <a href="tel:{{ SITESET.phone_e164 }}" 
+         class="px-6 py-3 bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg transition-colors">
+         {% trans "Позвонить" %} {{ SITESET.phone_e164|pretty_phone }}
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

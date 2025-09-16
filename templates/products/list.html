@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load i18n thumbnail %}
+
+{% block title %}{% trans "Товары" %}{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-semibold mb-6">{% trans "Товары" %}</h1>
+
+<form method="get" class="mb-6 flex flex-wrap gap-3 text-sm">
+  <select name="cat" class="bg-neutral-900 border border-neutral-700 rounded px-3 py-2">
+    <option value="">{% trans "Все категории" %}</option>
+    {% for c in cats %}
+      <option value="{{ c.slug }}" {% if request.GET.cat == c.slug %}selected{% endif %}>{{ c.title }}</option>
+    {% endfor %}
+  </select>
+  <select name="brand" class="bg-neutral-900 border border-neutral-700 rounded px-3 py-2">
+    <option value="">{% trans "Все бренды" %}</option>
+    {% for b in brands %}
+      <option value="{{ b.slug }}" {% if request.GET.brand == b.slug %}selected{% endif %}>{{ b.title }}</option>
+    {% endfor %}
+  </select>
+  <button class="px-4 py-2 border border-neutral-700 rounded">{% trans "Фильтр" %}</button>
+  {% if request.GET %}<a href="{% url 'product_list' %}" class="px-3 py-2 text-neutral-400 hover:text-white">{% trans "Сбросить" %}</a>{% endif %}
+</form>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  {% for p in products %}
+  <a href="{{ p.get_absolute_url }}" class="block border border-neutral-800 rounded-xl overflow-hidden hover:border-neutral-600">
+    {% if p.cover %}
+      {% thumbnail p.cover "800x600" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ p.title }}" class="w-full aspect-[4/3] object-cover" loading="lazy" decoding="async">
+      {% endthumbnail %}
+    {% endif %}
+    <div class="p-4">
+      {% if p.brand %}
+        <div class="text-sm text-neutral-400">{{ p.brand.title }}</div>
+      {% endif %}
+      <div class="text-lg font-medium">{{ p.title }}</div>
+      {% if p.unit %}<div class="text-neutral-400 text-sm mt-1">{{ p.unit }}</div>{% endif %}
+      {% if p.price %}<div class="mt-2 text-neutral-300 font-semibold">{{ p.price }} {% trans "сом" %}</div>{% else %}
+        <div class="mt-2 text-neutral-400">{% trans "Уточнить цену" %}</div>
+      {% endif %}
+    </div>
+  </a>
+  {% empty %}
+  <div class="text-neutral-400">{% trans "Пока нет товаров" %}</div>
+  {% endfor %}
+</div>
+{% endblock %}

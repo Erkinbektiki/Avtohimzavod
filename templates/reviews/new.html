@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Оставить отзыв" %} — {{ block.super }}{% endblock %}
+
+{% block content %}
+  <nav class="text-sm text-neutral-400 mb-6">
+    <a href="{% url 'home' %}" class="hover:underline">{% trans "Главная" %}</a>
+    <span class="mx-2">/</span>
+    <span class="text-neutral-300">{% trans "Оставить отзыв" %}</span>
+  </nav>
+
+  <div class="max-w-3xl">
+    <h1 class="text-2xl font-semibold mb-4">{% trans "Оставить отзыв" %}</h1>
+    <p class="text-neutral-400 mb-8">
+      {% trans "Поделитесь, пожалуйста, опытом обслуживания. Ваш отзыв поможет другим клиентам." %}
+    </p>
+
+    {# Общие ошибки формы #}
+    {% if form.non_field_errors %}
+      <div class="mb-6 border border-red-600 bg-red-900/20 text-red-200 rounded p-3">
+        {% for e in form.non_field_errors %}<div>{{ e }}</div>{% endfor %}
+      </div>
+    {% endif %}
+
+    <form method="post" action="" class="space-y-6">
+      {% csrf_token %}
+
+      {# Имя #}
+      <div>
+        <label for="{{ form.name.id_for_label }}" class="block mb-1 text-sm text-neutral-300">{% trans "Имя" %}</label>
+        <input type="text" name="{{ form.name.html_name }}" id="{{ form.name.id_for_label }}"
+               value="{{ form.name.value|default_if_none:'' }}"
+               class="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-neutral-100"
+               placeholder="{% trans 'Как к вам обращаться' %}">
+        {% if form.name.errors %}
+          <p class="mt-1 text-sm text-red-300">{% for e in form.name.errors %}{{ e }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Телефон #}
+      <div>
+        <label for="{{ form.phone.id_for_label }}" class="block mb-1 text-sm text-neutral-300">{% trans "Телефон" %}</label>
+        <input type="tel" name="{{ form.phone.html_name }}" id="{{ form.phone.id_for_label }}"
+               value="{{ form.phone.value|default_if_none:'' }}"
+               class="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-neutral-100"
+               placeholder="+996 555 000 000">
+        {% if form.phone.errors %}
+          <p class="mt-1 text-sm text-red-300">{% for e in form.phone.errors %}{{ e }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Рейтинг — звезды #}
+      <div>
+        <span class="block mb-1 text-sm text-neutral-300">{% trans "Оценка" %}</span>
+        <div class="flex items-center gap-1" x-data="{rating: Number(document.getElementById('id_rating')?.value || 0)}">
+          {# 5→1, чтобы работал CSS для :checked ~ label (если захочешь) #}
+          {% for n in "54321" %}
+            {% with i=n|stringformat:"i" %}
+            <input class="sr-only peer" type="radio" name="{{ form.rating.html_name }}" id="rate-{{ i }}" value="{{ i }}"
+                   {% if form.rating.value|stringformat:"s" == i %}checked{% endif %}>
+            <label for="rate-{{ i }}" class="cursor-pointer text-2xl leading-none select-none"
+                   title="{{ i }}/5">★</label>
+            {% endwith %}
+          {% endfor %}
+        </div>
+        <p class="text-xs text-neutral-500 mt-1">{% trans "5 — отлично, 1 — плохо" %}</p>
+        {% if form.rating.errors %}
+          <p class="mt-1 text-sm text-red-300">{% for e in form.rating.errors %}{{ e }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</p>
+        {% endif %}
+        {# скрытый input, если в форме поле как IntegerField — можно оставить только radio выше #}
+        <input type="hidden" id="id_rating" value="{{ form.rating.value|default_if_none:'' }}">
+      </div>
+
+      {# Текст отзыва #}
+      <div>
+        <label for="{{ form.text.id_for_label }}" class="block mb-1 text-sm text-neutral-300">{% trans "Комментарий" %}</label>
+        <textarea name="{{ form.text.html_name }}" id="{{ form.text.id_for_label }}" rows="5"
+                  class="w-full bg-neutral-900 border border-neutral-700 rounded px-3 py-2 text-neutral-100"
+                  placeholder="{% trans 'Что понравилось? Что можно улучшить?' %}">{{ form.text.value|default_if_none:'' }}</textarea>
+        {% if form.text.errors %}
+          <p class="mt-1 text-sm text-red-300">{% for e in form.text.errors %}{{ e }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</p>
+        {% endif %}
+      </div>
+
+      {# Согласие на публикацию #}
+      <div class="flex items-start gap-2">
+        <input type="checkbox" name="{{ form.allow_publish.html_name }}" id="{{ form.allow_publish.id_for_label }}"
+               {% if form.allow_publish.value %}checked{% endif %}
+               class="mt-1 h-4 w-4 rounded bg-neutral-900 border-neutral-700">
+        <label for="{{ form.allow_publish.id_for_label }}" class="text-sm text-neutral-300">
+          {% trans "Согласен(на) на публикацию отзыва на сайте" %}
+        </label>
+      </div>
+      {% if form.allow_publish.errors %}
+        <p class="mt-1 text-sm text-red-300">{% for e in form.allow_publish.errors %}{{ e }}{% if not forloop.last %}<br>{% endif %}{% endfor %}</p>
+      {% endif %}
+
+      <div class="pt-2">
+        <button type="submit"
+                class="px-5 py-2 rounded bg-white text-black font-medium hover:opacity-90">
+          {% trans "Отправить отзыв" %}
+        </button>
+      </div>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,538 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-15 10:16+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:90
+msgid "Меню"
+msgstr "Menu"
+
+#: templates/base.html:92 templates/base.html:111 templates/faq/faq.html:35
+#: templates/services/detail.html:78 templates/services/detail.html:88
+msgid "Главная"
+msgstr "Main"
+
+#: templates/base.html:93 templates/base.html:112
+#: templates/services/detail.html:79 templates/services/detail.html:90
+#: templates/services/list.html:4 templates/services/list.html:36
+msgid "Услуги"
+msgstr "Services"
+
+#: templates/base.html:94 templates/base.html:113
+#: templates/products/list.html:4 templates/products/list.html:7
+msgid "Товары"
+msgstr "Goods"
+
+#: templates/base.html:96 templates/base.html:115 templates/contacts.html:4
+#: templates/contacts.html:7
+msgid "Контакты"
+msgstr "Contacts"
+
+#: templates/base.html:126
+msgid "Язык"
+msgstr "Язык"
+
+#: templates/base.html:173 templates/reviews/new.html:4
+#: templates/reviews/new.html:7
+#, fuzzy
+#| msgid "Отправить"
+msgid "Оставить отзыв"
+msgstr "Отправить"
+
+#: templates/contacts.html:11
+msgid "Адрес"
+msgstr "Address"
+
+#: templates/contacts.html:12 templates/partials/lead_form.html:20
+msgid "Телефон"
+msgstr "Phone"
+
+#: templates/contacts.html:23
+msgid "Часы работы"
+msgstr "Часы работы"
+
+#: templates/contacts.html:33
+msgid "Карта появится после заполнения координат в админке."
+msgstr "Карта появится после заполнения координат в админке."
+
+#: templates/errors/404.html:8
+msgid "Страница не найдена"
+msgstr "Страница не найдена"
+
+#: templates/errors/500.html:8
+msgid "Ведутся технические работы. Попробуйте позже."
+msgstr "Ведутся технические работы. Попробуйте позже."
+
+#: templates/faq/faq.html:4 templates/faq/faq.html:50
+msgid "FAQ — Диагностика мотора"
+msgstr "FAQ — Диагностика мотора"
+
+#: templates/faq/faq.html:37
+msgid "FAQ"
+msgstr "FAQ"
+
+#: templates/faq/faq.html:42
+msgid "Назад"
+msgstr "Назад"
+
+#: templates/faq/faq.html:53
+msgid ""
+"Собрали ответы на частые вопросы о диагностике двигателя, сроках и "
+"стоимости. Если не нашли нужное — напишите нам в WhatsApp, поможем за пару "
+"минут."
+msgstr ""
+"Собрали ответы на частые вопросы о диагностике двигателя, сроках и "
+"стоимости. Если не нашли нужное — напишите нам в WhatsApp, поможем за пару "
+"минут."
+
+#: templates/faq/faq.html:83
+msgid "Сколько стоит диагностика мотора?"
+msgstr "Сколько стоит диагностика мотора?"
+
+#: templates/faq/faq.html:87
+#, fuzzy
+#| msgid ""
+#| "Базовая диагностика — от 700 сом. Итог зависит от модели двигателя и перечня"
+#| " проверок. Точную стоимость назовём после осмотра."
+msgid ""
+"Базовая диагностика — от 1500 сом. Итог зависит от модели двигателя и "
+"перечня проверок. Точную стоимость назовём после осмотра."
+msgstr ""
+"Базовая диагностика — от 700 сом. Итог зависит от модели двигателя и перечня"
+" проверок. Точную стоимость назовём после осмотра."
+
+#: templates/faq/faq.html:93
+msgid "Сколько времени занимает?"
+msgstr "How long does it take?"
+
+#: templates/faq/faq.html:97
+msgid ""
+"Обычно 40–90 минут. При сложных случаях — до 2–3 часов с тест-драйвом и "
+"повторными проверками."
+msgstr ""
+"Usually 40–90 minutes. In complex cases — up to 2–3 hours with a test drive "
+"and repeated checks."
+
+#: templates/faq/faq.html:103
+msgid "Нужно ли записываться заранее?"
+msgstr "Is it necessary to book in advance?"
+
+#: templates/faq/faq.html:107
+msgid ""
+"Да, так мы точно зарезервируем пост и диагноста. В экстренных случаях найдём"
+" окошко в день обращения."
+msgstr ""
+"Да, так мы точно зарезервируем пост и диагноста. В экстренных случаях найдём"
+" окошко в день обращения."
+
+#: templates/faq/faq.html:117
+msgid "Не нашли ответ?"
+msgstr "Не нашли ответ?"
+
+#: templates/faq/faq.html:119
+msgid ""
+"Напишите нам — ответим в течение нескольких минут и сориентируем по "
+"стоимости."
+msgstr ""
+"Напишите нам — ответим в течение нескольких минут и сориентируем по "
+"стоимости."
+
+#: templates/faq/faq.html:131 templates/faq/faq.html:152
+#: templates/products/detail.html:57
+msgid "Позвонить"
+msgstr "Позвонить"
+
+#: templates/faq/faq.html:137
+msgid "Подсказка"
+msgstr "Подсказка"
+
+#: templates/faq/faq.html:139
+msgid ""
+"Диагностика — приоритет: она экономит бюджет ремонта. Мы фиксируем "
+"результаты и объясняем простыми словами."
+msgstr ""
+"Диагностика — приоритет: она экономит бюджет ремонта. Мы фиксируем "
+"результаты и объясняем простыми словами."
+
+#: templates/home.html:5 templates/home.html:16
+#, fuzzy, python-format
+#| msgid "FAQ — Диагностика мотора"
+msgid "Диагностика мотора в Бишкеке — %(brand)s"
+msgstr "FAQ — Диагностика мотора"
+
+#: templates/home.html:10
+msgid ""
+"Профессиональная диагностика мотора в Бишкеке: быстрая точная проверка "
+"двигателя на современном оборудовании. Понятные результаты и план ремонта "
+"уже после первого визита."
+msgstr ""
+"Professional engine diagnostics in Bishkek: fast and accurate engine check "
+"using modern equipment. Clear results and a repair plan after the first "
+"visit."
+
+#: templates/home.html:21
+msgid ""
+"Диагностика двигателя, проверка ошибок, компрессия, эндоскопия. Быстро и "
+"прозрачно."
+msgstr ""
+"Диагностика двигателя, проверка ошибок, компрессия, эндоскопия. Быстро и "
+"прозрачно."
+
+#: templates/home.html:38
+msgid "Диагностика мотора в Бишкеке"
+msgstr "Engine diagnostics in Bishkek"
+
+#: templates/home.html:42
+msgid ""
+"Профессиональная проверка двигателя: компьютерная диагностика, замер "
+"компрессии, эндоскопия цилиндров. Чёткие выводы и план работ уже после "
+"первого визита."
+msgstr ""
+"Professional engine check: computer diagnostics, measurement "
+"compression, endoscopy of cylinders. Clear conclusions and work plan after "
+"first visit."
+
+#: templates/home.html:53
+#, fuzzy
+#| msgid "Записаться в WhatsApp"
+msgid "Записаться в WhatsApp"
+msgstr "Book via WhatsApp"
+
+#: templates/home.html:59
+msgid "Telegram"
+msgstr "Telegram"
+
+#: templates/home.html:64
+#, fuzzy, python-format
+#| msgid "Позвонить"
+msgid "Позвонить %(phone)s"
+msgstr "Call"
+
+#: templates/home.html:69
+msgid "Или оставьте заявку — перезвоним в течение 10 минут."
+msgstr "Or leave a request - we will call you back within 10 minutes."
+
+#: templates/home.html:76
+msgid "5+ лет в Бишкеке"
+msgstr "5+ years in Bishkek"
+
+#: templates/home.html:77
+msgid "500+ обслуженных авто"
+msgstr "500+ serviced cars"
+
+#: templates/home.html:78
+#, fuzzy
+#| msgid "Часы работы"
+msgid "Гарантия на работы"
+msgstr "Warranty for work"
+
+#: templates/home.html:88
+#, python-format
+msgid ""
+"\n"
+"            %(rating)s / 5 · %(count)s отзывов\n"
+"          "
+msgstr ""
+"\n"
+"            %(rating)s / 5 · %(count)s отзывов\n"
+"          "
+
+#: templates/home.html:98
+#, fuzzy
+#| msgid "Сколько стоит диагностика мотора?"
+msgid "Смотреть: Диагностика мотора"
+msgstr "Watch: Engine diagnostics"
+
+#: templates/home.html:106
+msgid ""
+"Добавьте ID видео в SITESET.hero_youtube_id, чтобы показать ролик о "
+"диагностике"
+msgstr ""
+"Add video ID to SITESET.hero_youtube_id to show video about "
+"diagnostics"
+
+#: templates/home.html:115
+msgid "Отзывы клиентов"
+msgstr "Customer Reviews"
+
+#: templates/home.html:135
+#, fuzzy
+#| msgid "FAQ — Диагностика мотора"
+msgid "Диагностика мотора"
+msgstr "Engine diagnostics"
+
+#: templates/home.html:136
+msgid "Бишкек, Кыргызстан"
+msgstr "Bishkek, Kyrgyzstan"
+
+#: templates/partials/lead_form.html:14
+msgid "Имя"
+msgstr "Name"
+
+#: templates/partials/lead_form.html:26
+msgid "Комментарий"
+msgstr "Comment"
+
+#: templates/partials/lead_form.html:32 templates/reviews/new.html:32
+msgid "Отправить"
+msgstr "Send"
+
+#: templates/products/detail.html:34
+msgid "В наличии"
+msgstr "In stock"
+
+#: templates/products/detail.html:36
+msgid "Под заказ"
+msgstr "To order"
+
+#: templates/products/detail.html:40 templates/products/list.html:40
+#: templates/services/detail.html:145 templates/services/list.html:51
+msgid "сом"
+msgstr "som"
+
+#: templates/products/detail.html:52
+#, fuzzy
+#| msgid "Записаться в WhatsApp"
+msgid "Купить / спросить в WhatsApp"
+msgstr "Book via WhatsApp"
+
+#: templates/products/list.html:11
+msgid "Все категории"
+msgstr "All categories"
+
+#: templates/products/list.html:17
+msgid "Все бренды"
+msgstr "All brands"
+
+#: templates/products/list.html:22
+msgid "Фильтр"
+msgstr "Filter"
+
+#: templates/products/list.html:23
+msgid "Сбросить"
+msgstr "Reset"
+
+#: templates/products/list.html:41
+msgid "Уточнить цену"
+msgstr "Check price"
+
+#: templates/products/list.html:46
+msgid "Пока нет товаров"
+msgstr "No products yet"
+
+#: templates/services/detail.html:106
+msgid "Кейсы до и после"
+msgstr "Cases before and after"
+
+#: templates/services/detail.html:144
+msgid "Цена от"
+msgstr "Price from"
+
+#: templates/services/detail.html:154
+msgid "Есть вопросы? Звоните"
+msgstr "Any questions? Call us"
+
+#: templates/services/detail.html:164
+msgid "Вопросы и ответы"
+msgstr "Questions and answers"
+
+#: templates/services/list.html:51
+msgid "от"
+msgstr "from"
+
+#: templates/services/list.html:55
+msgid "Список услуг скоро появится."
+msgstr "The list of services will appear soon."
+
+msgid "Проверьте форму"
+msgstr "Check the form"
+
+msgid "Ручной ввод"
+msgstr "Manual input"
+
+msgid "Оценка"
+msgstr "Evaluation"
+
+msgid "Отзыв"
+msgstr "Review"
+
+msgid "Источник"
+msgstr "Source"
+
+msgid "Ссылка на источник"
+msgstr "Link to source"
+
+msgid "Показывать"
+msgstr "Show"
+
+msgid "Отзывы"
+msgstr "Reviews"
+
+msgid "Новая"
+msgstr "New"
+
+msgid "В работе"
+msgstr "In progress"
+
+msgid "Завершена"
+msgstr "Completed"
+
+msgid "Услуга"
+msgstr "Service"
+
+msgid "Статус"
+msgstr "Status"
+
+msgid "Согласие с политикой"
+msgstr "Agree with the policy"
+
+msgid "Заявка"
+msgstr "Bid"
+
+msgid "Заявки"
+msgstr "Applications"
+
+msgid "Бренд"
+msgstr "Brand"
+
+msgid "Короткое описание"
+msgstr "Short description"
+
+msgid "Телефон (для показа)"
+msgstr "Phone (for display)"
+
+msgid "Телефон в E.164"
+msgstr "Phone in E.164"
+
+msgid "Ссылка WhatsApp"
+msgstr "WhatsApp Link"
+
+msgid "Ссылка Telegram"
+msgstr "Telegram link"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Город"
+msgstr "City"
+
+msgid "Регион"
+msgstr "Region"
+
+msgid "Индекс"
+msgstr "Index"
+
+msgid "Страна (ISO2 или название)"
+msgstr "Country (ISO2 or name)"
+
+msgid "Широта"
+msgstr "Latitude"
+
+msgid "Долгота"
+msgstr "Length"
+
+msgid "Пн"
+msgstr "Mon"
+
+msgid "Вт"
+msgstr "Tuesday"
+
+msgid "Ср"
+msgstr "Wed"
+
+msgid "Чт"
+msgstr "Thu"
+
+msgid "Пт"
+msgstr "Fri"
+
+msgid "Сб"
+msgstr "Sat"
+
+msgid "Вс"
+msgstr "Sunday"
+
+msgid "Настройки сайта"
+msgstr "Site settings"
+
+msgid "Логотип"
+msgstr "Logo"
+
+msgid "Бренды"
+msgstr "Brands"
+
+msgid "Категория"
+msgstr "Category"
+
+msgid "Категория товара"
+msgstr "Product category"
+
+msgid "Категории товаров"
+msgstr "Product categories"
+
+msgid "Название"
+msgstr "Name"
+
+msgid "Обложка"
+msgstr "Cover"
+
+msgid "Краткое описание"
+msgstr "Brief description"
+
+msgid "Полное описание"
+msgstr "Full description"
+
+msgid "Цена, сом"
+msgstr "Price, сом"
+
+msgid "Единица"
+msgstr "Unit"
+
+msgid "Напр.: 1 л, 4 л, канистра 20 л"
+msgstr "For example: 1 l, 4 l, 20 l canister"
+
+msgid "Показывать на сайте"
+msgstr "Show on website"
+
+msgid "Товар"
+msgstr "Product"
+
+msgid "Фото"
+msgstr "Photo"
+
+msgid "ALT"
+msgstr "ALT"
+
+msgid "Фото товара"
+msgstr "Product photo"
+
+msgid "Фотографии товара"
+msgstr "Product photos"
+
+msgid "Двигатель и Детейлинг — эксперты в Бишкеке"
+msgstr "Engine & Detailing — Experts in Bishkek"
+
+msgid "Чистота. Мощность. Доверие."
+msgstr "Clean. Power. Trust."
+
+#~ msgid ""
+#~ "Раскоксовка, диагностика и детейлинг — понятные результаты уже после первого"
+#~ " визита."
+#~ msgstr ""
+#~ "Decarbonization, diagnostics and detailing — measurable results after the "
+#~ "first visit."

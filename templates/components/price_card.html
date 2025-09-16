@@ -1,0 +1,10 @@
+{# templates/components/price_card.html #}
+<div class="price-card">
+    <h3>{{ service.title }}</h3>
+    {% if service.price_from %}
+        <div class="price">от {{ service.price_from }} сом</div>
+    {% endif %}
+    {% if show_cta %}
+        <button class="cta-button">Записаться</button>
+    {% endif %}
+</div>

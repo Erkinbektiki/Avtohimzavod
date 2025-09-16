@@ -1,0 +1,24 @@
+{
+  "name": "avtohim_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.13"
+  }
+}
+
+{
+  "scripts": {
+    "dev:css": "tailwindcss -i ./assets/tailwind.css -o ./static/css/main.css --watch",
+    "build:css": "tailwindcss -i ./assets/tailwind.css -o ./static/css/main.css --minify"
+  }
+}

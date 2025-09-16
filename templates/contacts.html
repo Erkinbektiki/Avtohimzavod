@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n phones %}
+
+{% block title %}{% trans "Контакты" %}{% endblock %}
+
+{% block content %}
+<h1 class="text-2xl font-semibold mb-6">{% trans "Контакты" %}</h1>
+
+<div class="grid md:grid-cols-2 gap-8">
+  <div class="space-y-3">
+    <p><span class="text-neutral-400">{% trans "Адрес" %}:</span> {{ SITESET.street_address }}, {{ SITESET.address_locality }}</p>
+    <p><span class="text-neutral-400">{% trans "Телефон" %}:</span>
+      <a class="underline" href="tel:{{ SITESET.phone_e164 }}">{{ SITESET.phone_e164|pretty_phone }}</a>
+    </p>
+    {% if SITESET.email %}
+    <p><span class="text-neutral-400">Email:</span> <a class="underline" href="mailto:{{ SITESET.email }}">{{ SITESET.email }}</a></p>
+    {% endif %}
+    <p class="flex gap-3">
+      {% if SITESET.whatsapp_link %}<a class="px-3 py-1 rounded bg-white text-black" target="_blank" rel="noopener" href="{{ SITESET.whatsapp_link }}">WhatsApp</a>{% endif %}
+      {% if SITESET.telegram_link %}<a class="px-3 py-1 rounded border border-neutral-600" target="_blank" rel="noopener" href="{{ SITESET.telegram_link }}">Telegram</a>{% endif %}
+    </p>
+    <p class="text-sm text-neutral-400">
+      {% trans "Часы работы" %}: Пн-Пт {{ SITESET.hours_mon }}; Сб {{ SITESET.hours_sat }}; Вс {{ SITESET.hours_sun }}
+    </p>
+  </div>
+
+  <div class="border border-neutral-800 rounded-xl overflow-hidden">
+    {% if SITESET.geo_lat and SITESET.geo_lng %}
+      <iframe
+        src="https://maps.google.com/maps?q={{ SITESET.geo_lat }},{{ SITESET.geo_lng }}&z=15&output=embed"
+        class="w-full aspect-video" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    {% else %}
+      <div class="p-6 text-neutral-400">{% trans "Карта появится после заполнения координат в админке." %}</div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
