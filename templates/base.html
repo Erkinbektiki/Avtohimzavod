@@ -10,26 +10,57 @@
     <link rel="apple-touch-icon" href="{% static 'favicon/apple-touch-icon.png' %}">
     <meta name="theme-color" content="#0a0a0a">
 
-    <title>{% block title %}Avto_Him_Zavod{% endblock %}</title>
+    {# --- Title с приоритетом на диагностику (безопасный дефолт) --- #}
+    <title>
+      {% block title %}Диагностика двигателя в Бишкеке — ремонт и капремонт моторов | {{ SITESET.brand|default:"АвтоХимЗавод" }}{% endblock %}
+    </title>
 
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    {# --- Meta Description с безопасным дефолтом --- #}
+    {% block meta_description %}
+      <meta name="description" content="{% firstof meta_description 'Диагностика двигателя в Бишкеке: компьютерная проверка, замер компрессии, эндоскопия. Выполняем ремонт и капремонт моторов. Запись по WhatsApp или телефону.' %}">
+    {% endblock %}
+
+    {# --- Canonical + hreflang через alt_url (есть в твоих builtins) --- #}
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    {# TODO: вернуть hreflang, когда подтвердим сигнатуру alt_url #}
+
+
+    {# --- OG/Twitter дефолты (безопасно) --- #}
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}{% firstof meta_title 'Диагностика двигателя в Бишкеке — АвтоХимЗавод' %}{% endblock %}">
+    <meta property="og:description" content="{% firstof meta_description 'Диагностика двигателя: OBD-II, компрессия, эндоскопия. Ремонт и капремонт — по результатам проверки.' %}">
+    {% if SITESET.og_image %}<meta property="og:image" content="{{ SITESET.og_image.url }}">{% endif %}
+    <meta name="twitter:card" content="summary_large_image">
+
     {% block head_extra %}{% endblock %}
 
-    {# ---------- SEO JSON-LD ---------- #}
+    {# ---------- SEO JSON-LD (AutoRepair + LocalBusiness) ---------- #}
     {% block seo_jsonld %}
       <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": "AutoRepair",
         "name": "{{ SITESET.brand|escapejs }}",
         "url": "{{ request.build_absolute_uri|escapejs }}",
-        "contactPoint": [{
-          "@type": "ContactPoint",
-          "telephone": "{{ SITESET.phone_e164|escapejs }}",
-          "contactType": "customer service",
-          "areaServed": "KG",
-          "availableLanguage": ["ru","ky","en"]
-        }],
+        "image": {% if SITESET.og_image %}"{{ SITESET.og_image.url|escapejs }}"{% else %}null{% endif %},
+        "telephone": "{{ SITESET.phone_e164|escapejs }}",
+        "priceRange": "₸₸",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "{{ SITESET.street_address|escapejs }}",
+          "addressLocality": "{{ SITESET.address_locality|escapejs }}",
+          "addressRegion": "{{ SITESET.address_region|escapejs }}",
+          "addressCountry": "{{ SITESET.address_country|escapejs }}"
+        }{% if SITESET.geo_lat and SITESET.geo_lng %},
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": {{ SITESET.geo_lat|unlocalize }},
+          "longitude": {{ SITESET.geo_lng|unlocalize }}
+        }{% endif %},
+        "areaServed": "Бишкек",
+        "availableLanguage": ["ru","ky","en"],
         {% if SITE_RATING.count %}
         "aggregateRating": {
           "@type": "AggregateRating",
@@ -37,6 +68,22 @@
           "reviewCount": {{ SITE_RATING.count }}
         },
         {% endif %}
+        "knowsAbout": ["Диагностика двигателя","OBD-II","Замер компрессии","Эндоскопия цилиндров","Капремонт двигателя","Ремонт моторов"],
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "serviceType": "Диагностика двигателя",
+              "areaServed": "Бишкек",
+              "provider": { "@type":"AutoRepair","name":"{{ SITESET.brand|escapejs }}" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": { "@type":"Service", "serviceType":"Капитальный ремонт двигателя" }
+          }
+        ],
         "department": [
           {% if BRANCHES %}
             {% for b in BRANCHES %}

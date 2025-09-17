@@ -1,40 +1,31 @@
 {% extends "base.html" %}
-{% load i18n phones %}
+{% load i18n l10n phones %}
 
+{# --- TITLE --- #}
 {% block title %}
   {% blocktrans trimmed with brand=SITESET.brand %}
     Диагностика мотора в Бишкеке — {{ brand }}
   {% endblocktrans %}
 {% endblock %}
 
-{% block head_extra %}
-  {# Описание #}
+{# --- META DESCRIPTION (используем блок из base.html, чтобы не дублировать) --- #}
+{% block meta_description %}
   {% blocktrans trimmed asvar meta_description %}
     Профессиональная диагностика мотора в Бишкеке: быстрая точная проверка двигателя на современном оборудовании. Понятные результаты и план ремонта уже после первого визита.
   {% endblocktrans %}
+  <meta name="description" content="{{ meta_description }}">
+{% endblock %}
 
-  {# OG Title #}
+{# --- OG TITLE (base.html сам подхватит og:description из meta_description) --- #}
+{% block og_title %}
   {% blocktrans trimmed with brand=SITESET.brand asvar og_title %}
     Диагностика мотора в Бишкеке — {{ brand }}
   {% endblocktrans %}
-
-  {# OG Description #}
-  {% blocktrans trimmed asvar og_description %}
-    Диагностика двигателя, проверка ошибок, компрессия, эндоскопия. Быстро и прозрачно.
-  {% endblocktrans %}
-
-  <meta name="description" content="{{ meta_description }}">
-  <meta property="og:title" content="{{ og_title }}">
-  <meta property="og:description" content="{{ og_description }}">
-  <meta property="og:type" content="website">
-  {% if SITESET.og_image %}
-    <meta property="og:image" content="{{ SITESET.og_image.url }}">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-  {% endif %}
-  <meta property="og:url" content="{{ request.build_absolute_uri }}">
-  <meta name="twitter:card" content="summary_large_image">
+  {{ og_title }}
 {% endblock %}
+
+{# head_extra не нужен для OG — base уже всё рендерит; оставим пустым #}
+{% block head_extra %}{% endblock %}
 
 {% block content %}
 <section class="py-16">
@@ -149,7 +140,7 @@
 {% endif %}
 {% endblock %}
 
-{# JSON-LD для SEO #}
+{# JSON-LD для SEO — фикс имени переменной рейтинга и числовых фильтров #}
 {% block seo_jsonld %}
 <script type="application/ld+json">
 {
@@ -160,29 +151,24 @@
   "provider": {
     "@type": "LocalBusiness",
     "name": "{{ SITESET.brand|escapejs }}",
-    "telephone": "{{ SITESET.phone_e164 }}",
+    "telephone": "{{ SITESET.phone_e164|escapejs }}",
+    "url": "{{ request.build_absolute_uri|escapejs }}",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "{{ SITESET.street_address|escapejs }}",
       "addressLocality": "{{ SITESET.address_locality|escapejs }}",
       "addressRegion": "{{ SITESET.address_region|escapejs }}",
       "addressCountry": "{{ SITESET.address_country|escapejs }}"
-    },
-    "url": "{{ request.build_absolute_uri|escapejs }}"
+    }
   }{% if SITE_RATING.count %},
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": "{{ SITESET_RATING.value|floatformat:1 }}",
-    "reviewCount": "{{ SITESET_RATING.count }}"
+    "ratingValue": {{ SITE_RATING.value|floatformat:1|unlocalize }},
+    "reviewCount": {{ SITE_RATING.count }}
   }{% endif %}{% if SITESET.og_image %},
-  "image": "{{ SITESET.og_image.url }}"{% endif %}
+  "image": "{{ SITESET.og_image.url|escapejs }}"{% endif %}
 }
 </script>
 {% endblock %}
 
-{# Подключаем lite-youtube (в конце страницы) #}
-{% block extra_scripts %}
-<script type="module">
-  import LiteYTEmbed from 'https://cdn.jsdelivr.net/npm/lite-youtube@0.2.1/lite-yt-embed.js';
-</script>
-{% endblock %}
+{# Ничего не подключаем дополнительно — base.html уже грузит lite-yt.js #}
