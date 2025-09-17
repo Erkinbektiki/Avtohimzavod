@@ -29,7 +29,7 @@
 
 {% block content %}
 <section class="py-16">
-  <div class="grid md:grid-cols-2 gap-10 items-start">
+  <div class="grid md:grid-cols-2 gap-10 items-stretch">
     <div>
       <h1 class="text-3xl md:text-5xl font-semibold leading-tight">
         {% trans "Диагностика мотора в Бишкеке" %}
@@ -99,21 +99,48 @@
     </div>
 
     {# Видео #}
-    <div class="aspect-video bg-neutral-900 rounded-xl border border-neutral-800 overflow-hidden relative">
-      {% if SITESET.hero_youtube_id %}
-        {% trans "Смотреть: Диагностика мотора" as yt_label %}
-        <lite-youtube
-          videoid="{{ SITESET.hero_youtube_id }}"
-          style="width:100%; height:100%; display:block;"
-          playlabel="{{ yt_label }}">
-        </lite-youtube>
-      {% else %}
-        <div class="w-full h-full flex items-center justify-center text-neutral-500 text-center p-6">
-          {% trans "Добавьте ID видео в SITESET.hero_youtube_id, чтобы показать ролик о диагностике" %}
-        </div>
-      {% endif %}
-    </div>
-  </div>
+<div class="h-full min-h-[260px] md:min-h-[520px] bg-neutral-900 rounded-xl border border-neutral-800 overflow-hidden relative flex">
+  {% if SITESET.hero_youtube_id %}
+    {% trans "Смотреть: Диагностика мотора" as yt_label %}
+
+    {# 1) Лёгкий плеер с автозапуском и повтором #}
+    <lite-youtube
+      videoid="{{ SITESET.hero_youtube_id }}"
+      playlabel="{{ yt_label }}"
+      style="width:100%; height:100%; display:block;"
+      params="autoplay=1&mute=1&loop=1&playlist={{ SITESET.hero_youtube_id }}&playsinline=1&modestbranding=1&controls=0">
+    </lite-youtube>
+
+    {# 2) Фоллбек на <iframe>, если web-component не зарегистрировался #}
+    <script>
+      (function(){
+        try {
+          if (!('customElements' in window) || !customElements.get('lite-youtube')) {
+            var c = document.currentScript.parentElement;
+            c.innerHTML =
+              '<iframe id="yt-hero" ' +
+              'src="https://www.youtube.com/embed/{{ SITESET.hero_youtube_id }}?rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1&loop=1&playlist={{ SITESET.hero_youtube_id }}&controls=0&enablejsapi=1" ' +
+              'title="YouTube video" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" ' +
+              'allowfullscreen referrerpolicy="strict-origin-when-cross-origin" class="w-full h-full"></iframe>';
+          }
+        } catch(e){}
+      })();
+    </script>
+
+    {# 3) Без JS — обычный iframe с теми же параметрами #}
+    <noscript>
+      <iframe
+        id="yt-hero"
+        src="https://www.youtube.com/embed/{{ SITESET.hero_youtube_id }}?rel=0&modestbranding=1&playsinline=1&autoplay=1&mute=1&loop=1&playlist={{ SITESET.hero_youtube_id }}&controls=0&enablejsapi=1"
+        title="YouTube video"
+        allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+        allowfullscreen
+        referrerpolicy="strict-origin-when-cross-origin"
+        class="w-full h-full"></iframe>
+    </noscript>
+  {% endif %}
+</div>
+
 </section>
 
 {# Отзывы #}
